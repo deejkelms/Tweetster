@@ -13,3 +13,26 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+.navbar {
+    background-color: white;
+}
+
+body {
+    background-color: #c0deed;
+}
+
+.fa {
+    margin-top: 10px;
+    color: #0084b4;
+    position: absolute;
+    left: 50%;
+    margin-right: 25px !important;
+    display: block;
+}
+
+.button { 
+    color: #0084b4;
+}
