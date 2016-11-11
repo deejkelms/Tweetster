@@ -1,26 +1,27 @@
+<!-- begin row 2. -->
 <div class="row">
     <div class="col-xs-3">
       <div class="col-sm-12" style="margin-top: -200px;">
-            <img src="/nectar.jpg" height="200px" width="200px" class="rounded-img">
+            <li class="round-image-50"><%= image_tag(current_user.avatar.url(:thumb)) %></li>
+            <!--<img src="/avatar.png" height="200px" width="200px" class="rounded-img">-->
       </div>
       <div class="col-sm-12">
         <h3 style="font-weight: bold;"><%= params[:id] %></h3>
         <p>
-          Hi my name is DJ
+          Awesome developer who loves building cool shit <a href="https://www.youtube.com/playlist?list=PLX9e7obSOWxPG2l6BCMwdNy_RVya88yCo">http://www.youtube.com/goodTunes</a>
         </p>
       </div>
     </div>
     
-    
- <div class="col-xs-6">
-        <%= render '/components/post_form' %><br><br>
+    <div class="col-xs-6">
+      <%= render '/components/post_form' %><br><br>
         
         <% for @p in @posts %>
         <div class="panel panel-default post-panel">
           <div class="panel-body row">
             
             <div class="col-sm-1">
-              <img src="/nectar.jpg" class="rounded-img" height="50px" width="50px"></img>
+              <img src="/avatar.png" class="rounded-img" height="50px" width="50px"></img>
             </div>
             <div class="col-sm-11">
               <p class="post-title"><span class="post-owner"><a href="/user/<%= User.find(@p.user_id).username %>"><%= User.find(@p.user_id).username %></a></span> <span class="post-creation">- <%= @p.created_at.to_formatted_s(:short) %></span></p>
@@ -52,7 +53,7 @@
     </div>
     
     <div class="col-xs-3">
-      <%= render '/components/follow_button', :user => User.find_by_username(params[:id]) %>
+        <%= render '/components/follow_button', :user => User.find_by_username(params[:id]) %>
         <div class="panel panel-default">
           <div class="panel-body">
              <h5 style="color: grey; font-size: 125%;">Who to follow</h5>
@@ -60,12 +61,17 @@
                <p style="font-weight: bold; opacity: 0.85;" ><a href="/user/<%= @u.username %>"><%= @u.username %></a></p>
              <% end %>
           </div>
-    </div>
+        </div>
         
-    <div class="col-xs-3">
         <div class="panel panel-default">
           <div class="panel-body">
-            <p style="opacity: 0.5; font-size: 90%;">© 2016 Flutter  About  Help  Terms  Privacy  Cookies  Ads Info  Brand  Blog  Status  Apps  Jobs  Advertise  Businesses  Media  Developers</p>
+             <h5 style="color: grey; font-size: 125%;">Trends</h5>
+              <a href="">#Trend #1</a><br>
+                <span style="color: grey;">31k Posts</span><br><br>
+              <a href="">#Trend #2</a><br>
+                <span style="color: grey;">25k Posts</span><br><br>
+              <a href="">#Trend #3</a><br>
+                <span style="color: grey;">16k Posts</span><br><br>
           </div>
         </div>
     </div>
