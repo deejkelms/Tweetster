@@ -8,9 +8,9 @@ class PagesController < ApplicationController
   # back-end code for pages/home
   def home
     following = Array.new
-    # for @f in current_user.following do
-    #   following.push(@f.id)
-    # end
+    for @f in current_user.following do
+      following.push(@f.id)
+    end
 
     @posts = Post.where("user_id IN (?)", following)
     @newPost = Post.new
@@ -29,14 +29,14 @@ class PagesController < ApplicationController
     @posts = Post.all.where("user_id = ?", User.find_by_username(params[:id]).id)
     @newPost = Post.new
     
-    # @toFollow = User.all.last(5)
+    @toFollow = User.all.last(5)
   end
 
   # back-end code for pages/explore
   def explore
     @posts = Post.all
     @newPost = Post.new
-    # @toFollow = User.all.last(5)
+    @toFollow = User.all.last(5)
   end
   
 end
